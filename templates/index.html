@@ -1,0 +1,341 @@
+{% extends "base.html" %}
+
+{% block title %}CodeCaracas - Web Personal{% endblock %}
+
+{% block content %}
+
+		<!-- Navigation -->
+		{% load static %}
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="company logo" /></a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right custom-menu">
+						<li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#services">Servicios</a></li>
+						<li><a href="#bloghome">Posts</a></li>
+						<li><a href="#portfolio1">Portafolio</a></li>
+						<li><a href="#contact">Contacto</a></li>
+						<li><a href="{% url 'blog' %}">Blog</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Header Carousel -->
+		<header id="home" class="carousel slide">
+			<ul class="cb-slideshow">
+				<li><span>image1</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="text-center"><h3>Good question.</h3></div>
+							</div>
+						</div>
+						<h4>What now?</h4>
+					</div>
+				</li>
+				<li><span>image2</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="text-center"><h3>Sort of. Just keep moving.</h3></div>
+							</div>
+						</div>
+						<h4>Do you have a plan?</h4>
+					</div>
+				</li>
+				<li><span>image3</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="text-center"><h3>It's gotten me this far.</h3></div>
+							</div>
+						</div>
+						<h4>That's not a plan.</h4>
+					</div>
+				</li>
+				<li><span>Image 04</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="text-center"><h3>A hell of a long way from where I started.</h3></div>
+							</div>
+						</div>
+						<h4>Right. And where exactly is that?</h4>
+					</div>
+				</li>
+				<li><span>Image 05</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="text-center"><h3>A hell of a long way from where I started.</h3></div>
+							</div>
+						</div>
+						<h4>Right. And where exactly is that?</h4>
+					</div>
+				</li>
+				<li><span>Image 06</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="text-center"><h3>A hell of a long way from where I started.</h3></div>
+							</div>
+						</div>
+						<h4>Right. And where exactly is that?</h4>
+					</div>
+				</li>
+			</ul>
+			<div class="intro-scroller">
+				<a class="inner-link" href="#about">
+					<div class="mouse-icon" style="opacity: 1;">
+						<div class="wheel"></div>
+					</div>
+				</a> 
+			</div>          
+		</header>
+			
+		<!-- Page Content -->
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-10">
+						<div class="text-center">
+							<h2>About Me</h2>
+							<img class="img-responsive displayed" src="{% static 'images/short.png' %}" alt="Company about"/>
+							<div class="row">
+								<div class="col-md-12">
+									<p>
+									Hey! Soy <span class="color-elements">Chris</span>. Estudiante de Ingieneria Informática en la UCAB.<br>
+									Inicio <span class="color-elements">CodeCaracas</span> con la finalidad de promover mis habilidades y ponerlas en práctica con tal de mejorarlas, tambien cumple como plataforma experimental para expander mis conocimientos debido que he encontrado como mejor tutor el trabajo per se. Dispone tambien de un Blog donde posteare información variada como tutoriales sobre criptomonedas hasta mi opinion sobre la ultima pelicula que vi.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="services">
+			<div class="orangeback">
+				<div class="container">
+					<div class="text-center homeport2"><h2>Servicios</h2></div>
+					<div class="row">
+						<div class="col-md-12 homeservices1">  <!-- ENCONTRAR MANERA DE CENTRAR  -->
+							<div class="col-md-3 portfolio-item">
+								<div class="text-center">
+									<a href="javascript:void(0);">
+									<span class="fa-stack fa-lg">
+									  <i class="fa fa-circle fa-stack-2x"></i>
+									  <i class="fa fa-bus fa-stack-1x"></i>
+									</span>
+									</a>
+									<h3><a href="#" target="_blank">Transporte</a></h3>
+									<p>El Negocio Familiar. Disponemos de varios autobuses muy bien equipados para realizar el viaje que quieras a cualquier parte de Venezuela, ya sea un finde en la playa o un viaje laboral.</p>
+								</div>
+							</div>
+							<div class="col-md-3 portfolio-item">
+								<div class="text-center">
+									<a href="javascript:void(0);">
+									<span class="fa-stack fa-lg">
+									  <i class="fa fa-circle fa-stack-2x"></i>
+									  <i class="fa fa-file-code-o fa-stack-1x"></i>
+									</span>
+									</a>
+									<h3><a href="#" target="_blank">Desarrollo Web</a></h3>
+									<p>Con poca experiencia como Desarrollador Web pero con gusto por un trabajo bien hecho. Brindo total atención al cliente con tal de que juntos lleguemos a la Web que quiere y mejor aun que necesita.</p>
+								</div>
+							</div>
+							<div class="col-md-3 portfolio-item">
+								<div class="text-center">
+									<a href="javascript:void(0);">
+									<span class="fa-stack fa-lg">
+									  <i class="fa fa-circle fa-stack-2x"></i>
+									  <i class="fa fa-cogs fa-stack-1x"></i>
+									</span>
+									</a>
+									<h3><a href="#" target="_blank">Servicio Técnico</a></h3>
+									<p>Al desarmar y armar PCs desde joven, aprendi a arreglarlos por mi cuenta. Un curso de reparación y la experiencia fruto de reparar todo el que me pedian, me permite resolver los problemas más comunes. </p>
+								</div>
+							</div>
+							<div class="col-md-3 portfolio-item">
+								<div class="text-center">
+									<a href="javascript:void(0);">
+									<span class="fa-stack fa-lg">
+									  <i class="fa fa-circle fa-stack-2x"></i>
+									  <i class="fa fa-newspaper-o fa-stack-1x"></i>
+									</span>
+									</a>
+									<h3><a href="#" target="_blank">Traduccción</a></h3>
+									<p>Autodidacta en el Ingles, debido a que es necesario en mi Carrera/Trabajo. Puedo redactar al ingles o traducir el texto que se ...................... ................ .........................</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="bloghome">
+			<div class="container">
+				<div class="text-center"><h2>Posts Recientes</h2>
+					<img class="img-responsive displayed" src="{% static 'images/short.png' %}" alt="about">
+				</div>
+				<div class="row">
+					<div class="col-md-12 homeport1">
+						{% for las in last %}
+							<div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
+								<figure class="effect-oscar">
+									<img src="{% static 'images/blog1.jpg' %}" alt="img09" class="img-responsive" />
+									<figcaption>
+										<h2>{{las.Post_Title}}</h2>
+										<a href=" {% url 'single_post' las.Post_Title %}">Ver Más</a>
+									</figcaption>
+								</figure>
+								<p class="text-center">{{las.Post_About | safe}}</p>
+							<div class="text-center"><a href="{% url 'single_post' las.Post_Title %}" class="btn btn-primary btn-noborder-radius hvr-bounce-to-bottom">Leer Más</a></div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EQUIPO
+		<section id="meet-team">
+			<div class="container">
+				<div class="text-center">
+				<h2>Team Members</h2>
+				<img class="img-responsive displayed" src="{% static "images/short.png" %}" alt="about">
+				</div>
+				<div class="row teamspace">
+					<div class="col-xs-12 col-sm-6 col-md-3">
+						<div class="team-member">
+							<div class="team-img">
+								<img class="img-responsive" src="images/person1.jpg" alt="">
+							</div>
+							<div class="team-info">
+								<h3>Christian Peri</h3>
+								<span>Co-Founder</span>
+							</div>
+							<p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+							<ul class="social-icons">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3">
+						<div class="team-member">
+							<div class="team-img">
+								<img class="img-responsive" src="images/person1.jpg" alt="">
+							</div>
+							<div class="team-info">
+								<h3>Jane Manz</h3>
+								<span>Project Manager</span>
+							</div>
+							<p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+							<ul class="social-icons">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3">
+						<div class="team-member">
+							<div class="team-img">
+								<img class="img-responsive" src="images/person1.jpg" alt="">
+							</div>
+							<div class="team-info">
+								<h3>Paulinho Rubos</h3>
+								<span>Designer</span>
+							</div>
+							<p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+							<ul class="social-icons">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3">
+						<div class="team-member">
+							<div class="team-img">
+								<img class="img-responsive" src="images/person1.jpg" alt="">
+							</div>
+							<div class="team-info">
+								<h3>Loreto Andas</h3>
+								<span>Developer</span>
+							</div>
+							<p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+							<ul class="social-icons">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> 
+-->
+
+		<section id="portfolio1">
+		<div class="container">
+		<div class="row">
+			<div class="text-center">
+			<h2>Portafolio</h2>
+			<img class="img-responsive displayed" src="{% static 'images/short.png' %}" alt="about">
+			</div>
+
+			<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@ PROXIMAMENTE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+			<ul class="filter nav nav-pills">
+			  <li data-value="all" ><a class="active" href="#">Todos</a></li>
+			  <!--<li data-value="development"><a href="#">Development</a></li>-->
+			  <li data-value="webdesign"><a href="#">Desarrollo Web</a></li>
+			  <!--<li data-value="mobileapps"><a href="#">Mobile Apps</a></li>-->
+			</ul>
+
+			<ul class="port2">
+			  <li data-type="development" data-id="id-1" class="port3">
+				<a href="#" id="development1"><img src="{% static 'images/port1.jpg' %}" alt=""></a></li>
+			  <li data-type="webdesign" data-id="id-2" class="port3">
+				<a href="#" id="webdesign1"><img src="{% static 'images/port2.jpg' %}" alt=""></a>
+			  </li>
+			  <li data-type="mobileapps" data-id="id-3" class="port3">
+				<a href="#" id="mobileapps1"><img src="{% static 'images/port3.jpg' %}" alt=""></a>
+			  </li>
+				<li data-type="development" data-id="id-4" class="port3">
+				<a href="#" id="development2"><img src="{% static 'images/port4.jpg' %}" alt=""></a>
+			  </li>
+			  <li data-type="webdesign" data-id="id-5" class="port3">
+				<a href="#" id="webdesign2"><img src="{% static 'images/port5.jpg' %}" alt=""></a>
+			  </li>
+			  <li data-type="mobileapps" data-id="id-6" class="port3">
+				<a href="#" id="mobileapps2"><img src="{% static 'images/port6.jpg' %}" alt=""></a>
+			  </li>
+
+			</ul>
+		  </div>
+		</div>
+		</section>
+
+{% endblock %}
+

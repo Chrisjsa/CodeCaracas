@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}CodeCaracas - Blog{% endblock %}
+
+{% block content %}
+		{% load static %}
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+					</button>
+					<a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="company logo" /></a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right custom-menu">
+						<li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+						<li><a href="{% url 'home' %}#about">About</a></li>
+						<li><a href="{% url 'home' %}#services">Servicios</a></li>
+						<li><a href="{% url 'home' %}#bloghome">Posts</a></li>
+						<li><a href="{% url 'home' %}#portfolio1">Portafolio</a></li>
+						<li><a href="{% url 'home' %}#contact">Contacto</a></li>
+						<li><a href="{% url 'blog' %}">Blog</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Page Content -->
+		<section class="container blog">
+			<div class="row">
+		        <!-- Blog Column -->
+		        <div class="col-md-8">
+		            <h1 class="page-header sidebar-title">
+		                CodeCaracas - Blog
+		            </h1>
+
+					{% for pos in posts %}
+					<!-- each post -->
+		            <div class="row blogu">
+		                <div class="col-sm-4 col-md-4 ">
+		                    <div class="blog-thumb">
+		                        <a href="{% url 'single_post' pos.Post_Title %}">
+		                            <img class="img-responsive" src="{% static 'images/blog-photo1.jpg' %}" alt="photo">
+		                        </a>
+		                    </div>
+		                </div>
+
+		                <div class="col-sm-8 col-md-8">
+		                    <h2 class="blog-title">
+		                        <a href="{% url 'single_post' pos.Post_Title %}">{{pos.Post_Title}}</a>
+		                    </h2>
+		                    <p>
+								<i class="fa fa-calendar-o"></i> {{pos.Post_Creation_Date}}
+		                        <span class="comments-padding"></span>
+		                        <i class="fa fa-comment"></i> <a href="{% url 'autor' pos.Post_Autor.Autor_Name%}">{{pos.Post_Autor.Autor_Name}}</a>
+		                    </p>
+		                    <p>{{pos.Post_About | safe}}</p>
+		                </div>
+		            </div>
+		            <hr>
+					{% endfor %}
+
+		            <div class="text-center"> 
+		                <ul class="pagination">
+							{% if pages.3 == "b" %}
+								{% if pages.1 > 1 %}
+									<li> <a href="{% url 'blog_next' pages.0 %}">Back</a> </li>
+		                    		<li class="active"> <a href="">{{pages.1}}</a> </li>
+									{% if pages.2 != 0 %}
+		                    			<li> <a href="{% url 'blog_next' pages.2 %}">Next</a> </li>
+									{% endif %}
+									{% else %}
+									<li class="active"> <a href="">{{pages.1}}</a> </li>
+									{% if pages.2 != 0 %}
+		                    			<li> <a href="{% url 'blog_next' pages.2 %}">Next</a> </li>
+									{% endif %}
+								{% endif %}
+							{% endif %}
+							{% if pages.3 == "c" %}
+								{% if pages.1 > 1 %}
+									<li> <a href="{% url 'category_next' pages.4 pages.0 %}">Back</a> </li>
+		                    		<li class="active"> <a href="">{{pages.1}}</a> </li>
+									{% if pages.2 != 0 %}
+		                    			<li> <a href="{% url 'category_next' pages.4 pages.2 %}">Next</a> </li>
+									{% endif %}
+									{% else %}
+									<li class="active"> <a href="">{{pages.1}}</a> </li>
+		                    		{% if pages.2 != 0 %}
+		                    			<li> <a href="{% url 'category_next' pages.4 pages.2 %}">Next</a> </li>
+									{% endif %}
+								{% endif %}
+							{% endif %}
+							{% if pages.3 == "a" %}
+								{% if pages.1 > 1 %}
+									<li> <a href="{% url 'autor_next' pages.4 pages.0 %}">Back</a> </li>
+		                    		<li class="active"> <a href="">{{pages.1}}</a> </li>
+									{% if pages.2 != 0 %}
+		                    			<li> <a href="{% url 'autor_next' pages.4 pages.2 %}">Next</a> </li>
+									{% endif %}
+									{% else %}
+									<li class="active"> <a href="">{{pages.1}}</a> </li>
+		                    		{% if pages.2 != 0 %}
+		                    			<li> <a href="{% url 'autor_next' pages.4 pages.2 %}">Next</a> </li>
+									{% endif %}
+								{% endif %}
+							{% endif %}
+		                </ul> 
+		            </div>
+		        </div>
+
+				<!-- Blog Sidebar Column -->
+				<aside class="col-md-4 sidebar-padding">
+		                <div class="blog-sidebar">
+		                    <div class="input-group searchbar">
+		                        <input type="text" class="form-control searchbar" placeholder="Search for...">
+		                        <span class="input-group-btn">
+		                        <button class="btn btn-default" type="button">Search</button>
+		                        </span>
+		                    </div><!-- /input-group -->
+		                </div>
+		                <!-- Blog Categories -->
+		                <div class="blog-sidebar">
+		                    <h4 class="sidebar-title"><i class="fa fa-list-ul"></i> Categories</h4>
+		                    <hr>
+		                    <ul class="sidebar-list">
+								{% for cat in categories %}
+									<li><a href="{% url 'category' cat.Category_Name %}">{{cat.Category_Name}}</a></li>
+								{% endfor %}
+		                    </ul>
+		                </div>
+		                <!-- Recent Posts -->
+		                <div class="blog-sidebar">
+		                    <h4 class="sidebar-title"><i class="fa fa-align-left"></i> Posts Recientes</h4>
+		                    <hr style="margin-bottom: 5px;">
+
+							{% for las in last %}
+							<div class="media">
+		                        <a class="pull-left" href="{% url 'single_post' las.Post_Title%}">
+		                            <img class="img-responsive media-object" src="{% static 'images/blog1.jpg' %}" alt="Media Object">
+		                        </a>
+		                        <div class="media-body">
+		                            <h4 class="media-heading"><a href="{% url 'single_post' las.Post_Title%}">{{las.Post_Title}}</a></h4>
+		                            {{las.Post_About_Short | safe}}
+		                        </div>
+		                    </div>
+							{% endfor %}
+
+		                </div>
+
+		                <div class="blog-sidebar">
+		                    <h4 class="sidebar-title"><i class="fa fa-comments"></i> Recent Comments</h4>
+		                    <hr style="margin-bottom: 5px;">
+		                     <ul class="sidebar-list">
+		                        <li><h5 class="blog-title">Author Name</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+		                        </li>
+		                        <li><h5 class="blog-title">Author Name</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+		                        </li>
+		                        <li><h5 class="blog-title">Author Name</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+		                        </li>
+							</ul>
+						</div>
+
+					</aside>
+
+			</div>
+		</section>
+
+{% endblock %}
