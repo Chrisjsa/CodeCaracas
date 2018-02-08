@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'codecaracas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'codecaracas',
-        'USER': 'root',
-        'PASSWORD': 'olakase',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'chriscross$codecaracas',
+        'USER': 'chriscross',
+        'PASSWORD': 'Olakase01',
+        'HOST': 'chriscross.mysql.pythonanywhere-services.com',
+        # 'PORT': '3306',
     }
 }
 
