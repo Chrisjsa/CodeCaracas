@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'codecaracas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = { #Base PythonAnywhere
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'chriscross$codecaracas',
@@ -85,6 +85,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = { #Base Loc   al
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'codecaracas',
+#        'USER': 'root',
+#        'PASSWORD': 'olakase',
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#    }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
